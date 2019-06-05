@@ -11,6 +11,7 @@ $(function() {
 	        data : function ( d ) {
 	        	var obj = {};
                 obj.username = $('#username').val();
+                obj.role = $('#role').val();
 	        	obj.start = d.start;
 	        	obj.length = d.length;
                 return obj;
@@ -33,7 +34,10 @@ $(function() {
 	                {
 	                	"data": 'password',
 						"visible" : true,
-                        "width":'20%'
+                        "width":'20%',
+                        "render": function ( data, type, row ) {
+                            return '*********';
+                        }
 					},
 					{
 						"data": 'role',
