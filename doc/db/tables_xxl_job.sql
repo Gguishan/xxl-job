@@ -1,5 +1,5 @@
-CREATE database if NOT EXISTS `xxl-job` default character set utf8 collate utf8_general_ci;
-use `xxl-job`;
+CREATE database if NOT EXISTS `xxl_job` default character set utf8 collate utf8_general_ci;
+use `xxl_job`;
 
 
 
@@ -68,7 +68,8 @@ CREATE TABLE `xxl_job_registry` (
   `registry_value` varchar(255) NOT NULL,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `i_g_k_v` (`registry_group`,`registry_key`,`registry_value`)
+  KEY `i_g_k_v` (`registry_group`,`registry_key`,`registry_value`),
+  KEY `i_u` (`update_time`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `xxl_job_group` (
